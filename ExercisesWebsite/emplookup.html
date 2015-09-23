@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="col-xs-2">&nbsp;</div>
+    <div class="col-xs-8" style="top:20px;">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">
+                Employee Information
+            </div>
+            <div class="panel-body">
+                <div class="text-right col-xs-1">Title:</div>
+                <div class="text-left col-xs-3" id="title"></div>
+                <div class="text-right col-xs-1">First:</div>
+                <div class="text-left col-xs-3" id="firstname"></div>
+                <div class="text-right col-xs-1">Surname:</div>
+                <div class="text-left col-xs-3">
+                    <input type="text" placeholder="Enter last name" id="TextBoxLastname" class="form-control" />
+                </div>
+                <div class="text-right col-xs-1">Phone#:</div>
+                <div class="text-left col-xs-3" id="phone"></div>
+                <div class="text-right col-xs-1">Email:</div>
+                <div class="text-left col-xs-3" id="email"></div>
+            </div>
+            <div class="panel-footer">
+                <input type="button" value="Find Employee" id="empbutton" />
+                <div class="col-xs-10" id="lblstatus"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/employee.js"></script>
+</body>
+</html>
