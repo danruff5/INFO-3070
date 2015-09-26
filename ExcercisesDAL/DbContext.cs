@@ -22,5 +22,13 @@ namespace ExcercisesDAL
                 return db.GetCollection<Employee>("employees");
             }
         }
+
+        public MongoCollection<Department> Departments
+        {
+            get
+            {
+                return db.GetCollection<Department>("departments");
+            }
+        }
     }
 }

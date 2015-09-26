@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContext.cs" />
+    <Compile Include="Department.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeByDepartmentDAO.cs" />
     <Compile Include="EmployeeDAO.cs" />
