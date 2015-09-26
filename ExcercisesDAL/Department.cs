@@ -8,3 +8,4 @@ namespace ExcercisesDAL
         public string DepartmentName { get; set; }
     }
 }
+

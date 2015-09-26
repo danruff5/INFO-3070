@@ -12,5 +12,10 @@ namespace ExcercisesDAL
         public string Email { get; set; }
         public string Phoneno { get; set; }
         public string Entity64 { get; set; }
+
+        public Employee (string name)
+        {
+            Firstname = name;
+        }
     }
 }
