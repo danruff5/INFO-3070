@@ -52,7 +52,6 @@
     <Compile Include="Department.cs" />
     <Compile Include="DepartmentDAO.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="EmployeeByDepartmentDAO.cs" />
     <Compile Include="EmployeeDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
