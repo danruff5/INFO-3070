@@ -1,13 +1,13 @@
-﻿using System;
-using System.Web.Http;
+﻿using System.Web.Http;
+using System;
 using ExcerciseViewModels;
 
-namespace ExercisesWebsite.Controllers
+namespace ExercisesWebsite
 {
     public class EmployeeController : ApiController
     {
         [Route("api/employees/{name}")]
-        public IHttpActionResult Get (string name)
+        public IHttpActionResult Get(string name)
         {
             try
             {
@@ -17,7 +17,7 @@ namespace ExercisesWebsite.Controllers
                 return Ok(emp);
             } catch (Exception ex)
             {
-                return BadRequest("Retrieve failed - " + ex.Message);
+                return BadRequest("Retrive failed - " + ex.Message);
             }
         }
     }
