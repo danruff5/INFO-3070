@@ -86,6 +86,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="emplookup.html" />
+    <Content Include="Lab6.html" />
+    <Content Include="menuexample.html" />
+    <Content Include="modalexample.html" />
     <Content Include="Scripts\employee.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

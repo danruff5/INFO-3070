@@ -36,7 +36,7 @@
 });
 
 function ajaxCall(type, url, data) {
-    return $.ajax({ // Return the promise that $.ajax returns
+    return $.ajax({ // Return the promise that $.ajax returns (deferred object)
         type: type,
         url, url,
         data: JSON.stringify(data),
