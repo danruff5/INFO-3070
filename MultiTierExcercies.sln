@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcercisesDAL", "ExcercisesDAL\ExcercisesDAL.csproj", "{658D97B4-9E09-4F92-B1F4-C793DF9DA492}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercisesDAL", "ExcercisesDAL\ExercisesDAL.csproj", "{658D97B4-9E09-4F92-B1F4-C793DF9DA492}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcercisesTests", "ExcercisesTests\ExcercisesTests.csproj", "{9C99BFD2-DEDE-413A-97FC-E0CE2F0BCBBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcercisesViewModels", "ExcercisesViewModels\ExcercisesViewModels.csproj", "{7242B5B0-BEE6-4938-81CB-80FD254C0967}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercisesViewModels", "ExcercisesViewModels\ExercisesViewModels.csproj", "{7242B5B0-BEE6-4938-81CB-80FD254C0967}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercisesWebsite", "ExercisesWebsite\ExercisesWebsite.csproj", "{454FCA04-1953-49FD-9CB4-E40E17B85847}"
 EndProject

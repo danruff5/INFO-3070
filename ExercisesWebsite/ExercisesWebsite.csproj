@@ -129,9 +129,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExcercisesViewModels\ExcercisesViewModels.csproj">
+    <ProjectReference Include="..\ExcercisesViewModels\ExercisesViewModels.csproj">
       <Project>{7242b5b0-bee6-4938-81cb-80fd254c0967}</Project>
-      <Name>ExcercisesViewModels</Name>
+      <Name>ExercisesViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,10 +1,12 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Kennedy;
 
-namespace ExcercisesDAL
+namespace ExercisesDAL
 {
-    public class Employee
+    public class Employee : IMongoEntity
     {
         public ObjectId _id { get; set; }
+        public string _accessId { get; set; }
         public ObjectId DepartmentId { get; set; }
         public string Title { get; set; }
         public string Firstname { get; set; }
@@ -16,6 +18,11 @@ namespace ExcercisesDAL
         public Employee (string name)
         {
             Firstname = name;
+        }
+
+        public Employee ()
+        {
+            Firstname = "not found";
         }
     }
 }

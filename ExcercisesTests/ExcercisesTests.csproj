@@ -54,13 +54,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExcercisesDAL\ExcercisesDAL.csproj">
+    <ProjectReference Include="..\ExcercisesDAL\ExercisesDAL.csproj">
       <Project>{658d97b4-9e09-4f92-b1f4-c793df9da492}</Project>
-      <Name>ExcercisesDAL</Name>
+      <Name>ExercisesDAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ExcercisesViewModels\ExcercisesViewModels.csproj">
+    <ProjectReference Include="..\ExcercisesViewModels\ExercisesViewModels.csproj">
       <Project>{7242b5b0-bee6-4938-81cb-80fd254c0967}</Project>
-      <Name>ExcercisesViewModels</Name>
+      <Name>ExercisesViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -4,7 +4,7 @@ using System;
 using MongoDB.Bson;
 
 
-namespace ExcercisesDAL
+namespace ExercisesDAL
 {
     public class DepartmentDAO
     {

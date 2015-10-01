@@ -1,7 +1,7 @@
 ﻿using System;
-using ExcercisesDAL;
+using ExercisesDAL;
 
-namespace ExcerciseViewModels
+namespace ExerciseViewModels
 {
     public class DepartmentViewModel
     {

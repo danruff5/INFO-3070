@@ -53,9 +53,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExcercisesDAL\ExcercisesDAL.csproj">
+    <ProjectReference Include="..\ExcercisesDAL\ExercisesDAL.csproj">
       <Project>{658d97b4-9e09-4f92-b1f4-c793df9da492}</Project>
-      <Name>ExcercisesDAL</Name>
+      <Name>ExercisesDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

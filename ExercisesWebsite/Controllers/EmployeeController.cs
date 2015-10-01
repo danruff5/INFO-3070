@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 using System;
-using ExcerciseViewModels;
+using ExerciseViewModels;
 
 namespace ExercisesWebsite
 {

@@ -1,25 +1,19 @@
 ﻿using MongoDB.Driver;
+using MongoDB.Kennedy;
 
-namespace ExcercisesDAL
+namespace ExercisesDAL
 {
-    public class DbContext
+    public class DbContext : ConcurrentDataContext
     {
-        MongoClient client;
-        MongoServer server;
-        MongoDatabase db;
-
-        public DbContext ()
-        {
-            client = new MongoClient();
-            server = client.GetServer();
-            db = server.GetDatabase("HelpdeskDB");
-        }
+        public DbContext (string databaseName = "HelpdeskDB", 
+            string serverName = "localhost"
+        ) : base(databaseName, serverName) { }
 
         public MongoCollection<Employee> Employees
         {
             get
             {
-                return db.GetCollection<Employee>("employees");
+                return this.Db.GetCollection<Employee>("employees");
             }
         }
 
@@ -27,7 +21,7 @@ namespace ExcercisesDAL
         {
             get
             {
-                return db.GetCollection<Department>("departments");
+                return this.Db.GetCollection<Department>("departments");
             }
         }
     }
