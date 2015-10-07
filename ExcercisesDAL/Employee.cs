@@ -3,6 +3,7 @@ using MongoDB.Kennedy;
 
 namespace ExercisesDAL
 {
+    [System.Serializable]
     public class Employee : IMongoEntity
     {
         public ObjectId _id { get; set; }

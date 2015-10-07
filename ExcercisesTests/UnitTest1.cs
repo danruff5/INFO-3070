@@ -57,5 +57,36 @@ namespace ExcercisesTests
 
             Assert.IsTrue(rowsUpdated == -2);
         }
+
+        [TestMethod]
+        public void UpdateViewModelTwiceShouldGenerateConcurrencyException()
+        {
+            int rowsUpdated = 0;
+            EmployeeViewModel user1Vm = new EmployeeViewModel();
+            EmployeeViewModel user2Vm = new EmployeeViewModel();
+
+            // Simulate users getting same employee:
+            user1Vm.Lastname = "Smartypants";
+            user1Vm.GetBySurname();
+            user2Vm.Lastname = "Smartypants";
+            user2Vm.GetBySurname();
+
+            // Change phone number for user 1:
+            user1Vm.Phoneno = "555-555-5551";
+
+            // User 1 updates:
+            rowsUpdated = user1Vm.Update();
+
+            if (rowsUpdated == 1)
+            {
+                // Change phone numeber for user 2:
+                user2Vm.Phoneno = "555-555-5552";
+
+                // Conncurrency exception rowsUpdated should = -2
+                rowsUpdated = user2Vm.Update();
+            }
+
+            Assert.IsTrue(rowsUpdated == -2);
+        }
     }
 }

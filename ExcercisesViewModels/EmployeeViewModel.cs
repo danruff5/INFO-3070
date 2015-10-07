@@ -35,10 +35,33 @@ namespace ExerciseViewModels
                 Email = emp.Email;
                 EmployeeId = emp._id.ToString();
                 DepartmentId = emp.DepartmentId.ToString();
+                Entity64 = Convert.ToBase64String(ViewModelUtils.Serializer(emp));
             } catch (Exception ex)
             {
                 Lastname = "not found";
             }
+        }
+
+        public int Update()
+        {
+            int empsUpdated = 0;
+
+            try
+            {
+                Employee emp = (Employee)ViewModelUtils.Deserializer(Convert.FromBase64String(Entity64));
+                emp.Title = Title;
+                emp.Firstname = Firstname;
+                emp.Lastname = Lastname;
+                emp.Phoneno = Phoneno;
+                emp.Email = Email;
+                empsUpdated = _dao.Update(emp);
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                empsUpdated = -1;
+            }
+
+            return empsUpdated;
         }
     }
 }
