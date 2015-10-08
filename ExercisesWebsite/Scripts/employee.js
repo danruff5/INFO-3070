@@ -33,6 +33,52 @@
             errorRoutine(jqXHR);
         });
     });
+
+    $("#empgetbutton").click(function (e) {
+        var lastname = $("#TextBoxFindLastname").val();
+        ajaxCall("Get", "api/employees/" + lastname, "")
+        .done(function (data) {
+            if (data.Lastname !== "not found") {
+                $("#TextBoxEmail").val(data.Email);
+                $("#TextBoxTitle").val(data.Title);
+                $("#TextBoxFirstname").val(data.Firstname);
+                $("#TextBoxLastname").val(data.Lastname);
+                $("#TextBoxPhone").val(data.Phoneno);
+                $("#HiddenEntity").val(data.Entity64);
+            } else {
+                $("#TextBoxEmail").val("");
+                $("#TextBoxTitle").val("");
+                $("#TextBoxFirstname").val("");
+                $("#TextBoxLastname").val("");
+                $("#TextBoxPhone").val("");
+                $("#HiddenEntity").val("");
+            }
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            errorRoutine(jqXHR);
+        });
+
+        $("#updateModal").modal("show");
+        return false; // Make sure to return false for click or REST calls get cancelled
+    });
+
+    $("#empupdbutton").click(function () {
+        emp = new Object();
+        emp.Title = $("#TextBoxTitle").val();
+        emp.Firstname = $("#TextBoxFirstname").val();
+        emp.Lastname = $("#TextBoxLastname").val();
+        emp.Phoneno = $("#TextBoxPhone").val();
+        emp.Email = $("#TextBoxEmail").val();
+        emp.Entity64 = $("#HiddenEntity").val();
+
+        ajaxCall("Put", "api/employees", emp)
+        .done(function (data) {
+            $("#lblstatus").text(data);
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+            errorRoutine(jqXHR);
+        });
+        return false;
+    });
 });
 
 function ajaxCall(type, url, data) {

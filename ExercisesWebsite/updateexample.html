@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Example</title>
+	<meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="col-xs-2">&nbsp;</div>
+        <div class="col-xs-8" style="top:20px;">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    Update Employee
+                </div>
+                <div class="panel-body">
+                    <div class="text-left col-xs-3">
+                        <input type="text" placeholder="Enter Last Name" id="TextBoxFindLastname" class="form-control" />
+                    </div>
+                    <input type="button" value="Find Employee" id="empgetbutton" />
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+
+        <div class="modal fade text-center" id="updateModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">X</button>
+                        <h1>Employee Information</h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-4">Title:</div>
+                            <div class="col-xs-8"><input type="text" placeholder="Enter Title" id="TextBoxTitle" class="form-control" /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">First:</div>
+                            <div class="col-xs-8"><input type="text" placeholder="Enter Firstname" id="TextBoxFirstname" class="form-control" /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">Surname:</div>
+                            <div class="col-xs-8"><input type="text" placeholder="Enter Lastname" id="TextBoxLastname" class="form-control" /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">Phone#:</div>
+                            <div class="col-xs-8"><input type="text" placeholder="Enter Phone" id="TextBoxPhone" class="form-control" /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">Email:</div>
+                            <div class="col-xs-8"><input type="text" placeholder="Enter Email" id="TextBoxEmail" class="form-control" /></div>
+                        </div>
+                        <input type="hidden" id="HiddenEntity" />
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col-xs-9 text-center row" id="lblstatus" style="padding-top: 10px;"></div>
+                        <div class="col-xs-3">
+                            <input type="button" value="Update Employee" id="empupdbutton" />
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/employee.js"></script>
+</body>
+</html>
