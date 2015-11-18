@@ -14,6 +14,8 @@ namespace ExerciseViewModels
         public string Entity64 { get; set; }
         public string EmployeeId { get; set; }
         public string DepartmentId { get; set; }
+        public string StaffPicture64 { get; set; }
+        public bool IsTech { get; set; }
 
         /// <summary>
         /// constructor
@@ -36,6 +38,7 @@ namespace ExerciseViewModels
                 EmployeeId = emp._id.ToString();
                 DepartmentId = emp.DepartmentId.ToString();
                 Entity64 = Convert.ToBase64String(ViewModelUtils.Serializer(emp));
+                StaffPicture64 = emp.StaffPicture64;
             } catch (Exception ex)
             {
                 Lastname = "not found";
@@ -54,6 +57,7 @@ namespace ExerciseViewModels
                 emp.Lastname = Lastname;
                 emp.Phoneno = Phoneno;
                 emp.Email = Email;
+                emp.StaffPicture64 = StaffPicture64;
                 empsUpdated = _dao.Update(emp);
             } catch (Exception ex)
             {

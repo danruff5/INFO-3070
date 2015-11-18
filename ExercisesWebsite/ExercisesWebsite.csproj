@@ -89,6 +89,8 @@
     <Content Include="Lab6.html" />
     <Content Include="menuexample.html" />
     <Content Include="modalexample.html" />
+    <Content Include="qunitexample.html" />
+    <Content Include="Scripts\employeeV2.js" />
     <Content Include="Scripts\employee.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -101,9 +103,16 @@
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\exampleTests.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\validationExample.js" />
+    <Content Include="updateexampleV2.html" />
     <Content Include="updateexample.html" />
+    <Content Include="validationExample.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

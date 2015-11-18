@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAUtils.cs" />
+    <Compile Include="DAUtilsV2.cs" />
     <Compile Include="DbContext.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="DepartmentDAO.cs" />

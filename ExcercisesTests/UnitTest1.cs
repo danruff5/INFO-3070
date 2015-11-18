@@ -33,6 +33,13 @@ namespace ExcercisesTests
         }*/
 
         [TestMethod]
+        public void CreateCollectionsShpuldReturnTrue()
+        {
+            DALUtilsV2 util = new DALUtilsV2();
+            Assert.IsTrue(util.LoadCollections());
+        }
+
+        [TestMethod]
         public void UpdateTwiceShouldGenerateConcurrencyException()
         {
             int rowsUpdated = 0;
