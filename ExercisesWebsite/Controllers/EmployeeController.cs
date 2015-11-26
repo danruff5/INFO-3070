@@ -1,12 +1,28 @@
 ﻿using System.Web.Http;
 using System;
 using ExerciseViewModels;
+using System.Collections.Generic;
 
 namespace ExercisesWebsite
 {
     public class EmployeeController : ApiController
     {
-        [Route("api/employees/{name}")]
+        [Route("api/employees")]
+        public IHttpActionResult Get()
+        {
+            try
+            {
+                EmployeeViewModel emp = new EmployeeViewModel();
+                List<EmployeeViewModel> allEmployees = emp.GetAll();
+                return Ok(allEmployees);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Retrive failed - " + ex.Message);
+            }
+        }
+
+        /*[Route("api/employees/{name}")]
         public IHttpActionResult Get(string name)
         {
             try
@@ -16,6 +32,21 @@ namespace ExercisesWebsite
                 emp.GetBySurname();
                 return Ok(emp);
             } catch (Exception ex)
+            {
+                return BadRequest("Retrive failed - " + ex.Message);
+            }
+        }*/
+
+        [Route("api/employees/{id}")]
+        public IHttpActionResult Get(string id)
+        {
+            try
+            {
+                EmployeeViewModel emp = new EmployeeViewModel();
+                emp.GetById(id);
+                return Ok(emp);
+            }
+            catch (Exception ex)
             {
                 return BadRequest("Retrive failed - " + ex.Message);
             }

@@ -2,6 +2,8 @@
 using System.Linq;
 using System;
 using MongoDB.Kennedy;
+using System.Collections.Generic;
+using MongoDB.Bson;
 
 namespace ExercisesDAL
 {
@@ -20,7 +22,26 @@ namespace ExercisesDAL
                 retEmp = (Employee)employee;
             }catch (Exception ex)
             {
-                Console.WriteLine("Problem " + ex.Message);
+                DALUtilsV2.ErrorRoutine(ex, "EmployeeDAO", "GetEmployeeBySurname");
+            }
+
+            return retEmp;
+        }
+
+        public Employee GetByID(string id)
+        {
+            Employee retEmp = null;
+            ObjectId ID = new ObjectId(id);
+            DbContext _ctx;
+
+            try
+            {
+                _ctx = new DbContext();
+                retEmp = _ctx.Employees.AsQueryable().FirstOrDefault(e => e._id == ID);
+            }
+            catch (Exception ex)
+            {
+                DALUtilsV2.ErrorRoutine(ex, "EmployeeDAO", "GetById");
             }
 
             return retEmp;
@@ -40,10 +61,27 @@ namespace ExercisesDAL
                 Console.WriteLine(ex.Message);
             } catch (Exception ex)
             {
-                Console.WriteLine("Problem " + ex.Message);
+                DALUtilsV2.ErrorRoutine(ex, "EmployeeDAO", "Update");
             }
 
             return updateOK;
+        }
+
+        public List<Employee> GetAll()
+        {
+            List<Employee> allEmps = new List<Employee>();
+
+            try
+            {
+                DbContext ctx = new DbContext();
+                allEmps = ctx.Employees.AsQueryable().ToList();
+            }
+            catch (Exception ex)
+            {
+                DALUtilsV2.ErrorRoutine(ex, "EmployeeDAO", "GetAll");
+            }
+
+            return allEmps;
         }
     }
 }

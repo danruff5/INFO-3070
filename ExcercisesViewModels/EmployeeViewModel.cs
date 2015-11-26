@@ -1,11 +1,14 @@
 ﻿using System;
 using ExercisesDAL;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace ExerciseViewModels
 {
     public class EmployeeViewModel
     {
         private EmployeeDAO _dao;
+        public string Id { get; set; }
         public string Title { get; set; }
         public string Firstname { get; set; }
         public string Lastname{ get; set; }
@@ -45,6 +48,28 @@ namespace ExerciseViewModels
             }
         }
 
+        public void GetById(string id)
+        {
+            try
+            {
+                Employee emp = _dao.GetByID(id);
+                Id = emp._id.ToString();
+                Title = emp.Title;
+                Firstname = emp.Firstname;
+                Lastname = emp.Lastname;
+                Phoneno = emp.Phoneno;
+                Email = emp.Email;
+                DepartmentId = emp.DepartmentId.ToString();
+                StaffPicture64 = emp.StaffPicture64;
+                IsTech = emp.IsTech;
+                Entity64 = Convert.ToBase64String(ViewModelUtils.Serializer(emp));
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "EmployeeViewModel", "GetById");
+            }
+        }
+
         public int Update()
         {
             int empsUpdated = 0;
@@ -66,6 +91,58 @@ namespace ExerciseViewModels
             }
 
             return empsUpdated;
+        }
+
+        public List<EmployeeViewModel> GetAll()
+        {
+            List<EmployeeViewModel> viewModels = new List<EmployeeViewModel>();
+
+            try
+            {
+                List<Employee> employees = _dao.GetAll();
+
+                foreach (Employee e in employees)
+                {
+                    // Return only fields for display, subdequent get will other fields
+                    EmployeeViewModel viewModel = new EmployeeViewModel();
+                    viewModel.Id = e._id.ToString();
+                    viewModel.Title = e.Title;
+                    viewModel.Firstname = e.Firstname;
+                    viewModel.Lastname = e.Lastname;
+                    viewModels.Add(viewModel); // Add to list
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorRoutine(ex, "EmployeeViewModel", "GetAll");
+            }
+            return viewModels;
+        }
+
+        public static void ErrorRoutine(Exception e, string obj, string method)
+        {
+            if (e.InnerException != null)
+            {
+                Trace.WriteLine("Error in ViewModels, Objects = "
+                    + obj
+                    + ", method = "
+                    + method
+                    + ", inner execption message = "
+                    + e.InnerException.Message
+                );
+                throw e.InnerException;
+            }
+            else
+            {
+                Trace.WriteLine("Error in ViewModels, object = "
+                    + obj
+                    + ", method = "
+                    + method
+                    + ", message = "
+                    + e.Message
+                );
+                throw e;
+            }
         }
     }
 }
